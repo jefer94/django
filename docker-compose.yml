@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  example:
+    image: breathecode/example
+    ports:
+      - 8000:8000
+    links:
+      - mysql
+
+  mysql:
+    image: mysql:latest
+    volumes:
+      - mysql:/var/lib/mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      MYSQL_DATABASE: example
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
+volumes:
+  mysql:
+  letsencrypt:
+  certbot:
