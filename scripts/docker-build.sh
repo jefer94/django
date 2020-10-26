@@ -2,7 +2,8 @@
 
 build() {
   echo ======================= $1 =======================
-  docker build ./ \
+  docker build ./$1 \
+    -f ./Dockerfile \
     -t breathecode/$1
     # --rm=false \
 }
@@ -10,5 +11,5 @@ build() {
 if [ $1 ]; then
   build "$1"
 else
-  build example
+  build projects
 fi
