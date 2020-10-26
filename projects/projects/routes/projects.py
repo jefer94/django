@@ -12,6 +12,7 @@ from rest_framework.decorators import action
 from rest_framework import permissions
 
 class ProjectSerializer(serializers.HyperlinkedModelSerializer):
+    # projects = serializers.PrimaryKeyRelatedField(many=True, queryset=Snippet.objects.all())
     class Meta:
         model = Project
         fields = ['id', 'user', 'name', 'description', 'created_at', 'updated_at']

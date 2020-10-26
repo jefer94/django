@@ -7,7 +7,7 @@ from .projects_tests import create_project
 data = {
     'title': 'asdsad1',
     'code': 'asdsad2',
-    'project': 1 }
+    'project': '1' }
 
 def create_code(self):
     create_project(self)

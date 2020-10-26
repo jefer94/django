@@ -12,6 +12,8 @@ from rest_framework.decorators import action
 from rest_framework import permissions
 
 class CodeSerializer(serializers.HyperlinkedModelSerializer):
+    project = serializers.PrimaryKeyRelatedField(queryset=Code.objects.all())
+    # project = serializers.ReadOnlyField(source='project.id')
     class Meta:
         model = Code
         fields = ['id', 'title', 'code', 'project', 'created_at', 'updated_at']
